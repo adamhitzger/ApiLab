@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
 import { site } from "@/lib/content";
-import { ogImage, siteUrl } from "@/lib/seo";
+import { ogImage, siteTitle, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -17,13 +17,12 @@ const instrument = Instrument_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const title = "AUTOMA — Automatizace firemních a výrobních procesů";
 const description =
   "Softwarová agentura pro automatizaci firemních a výrobních procesů, dat a AI. Scraping dat, napojení na CRM, dashboardy pro výrobu — měsíční paušál bez hvězdiček.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: title, template: "%s · AUTOMA" },
+  title: { default: siteTitle, template: `%s · ${site.name}` },
   description,
   applicationName: site.name,
   generator: "Next.js",
@@ -53,11 +52,11 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "cs_CZ",
     url: "/",
-    title,
+    title: siteTitle,
     description,
     images: [ogImage],
   },
-  twitter: { card: "summary_large_image", title, description, images: [ogImage.url] },
+  twitter: { card: "summary_large_image", title: siteTitle, description, images: [ogImage.url] },
   robots: {
     index: true,
     follow: true,

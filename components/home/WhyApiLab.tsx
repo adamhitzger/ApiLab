@@ -1,7 +1,7 @@
 import { why } from "@/lib/content";
 import { Container, Eyebrow, Heading, NumberBadge } from "@/components/ui";
 
-export function WhyAutoma() {
+export function WhyApiLab() {
   return (
     <section className="relative overflow-hidden bg-ink-2 texture-dots texture-grain">
       <div data-hazard className="hazard-stripe absolute inset-x-0 top-0 h-1.5" aria-hidden />

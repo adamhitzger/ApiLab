@@ -9,7 +9,7 @@ const description =
 
 export const metadata: Metadata = {
   title: "Ochrana osobních údajů",
-  ...pageSeo({ path: "/ochrana-osobnich-udaju", title: "Ochrana osobních údajů · AUTOMA", description, type: "article" }),
+  ...pageSeo({ path: "/ochrana-osobnich-udaju", title: "Ochrana osobních údajů", description, type: "article" }),
 };
 
 export default function PrivacyPage() {
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
         <h2>Vaše práva</h2>
         <p>
           Máte právo na přístup ke svým údajům, jejich opravu, výmaz či omezení zpracování a právo podat stížnost u Úřadu pro ochranu osobních údajů.
-          Ozvěte se na hello@automa.cz.
+          Ozvěte se na hello@apilab.cz.
         </p>
       </LegalPage>
     </>

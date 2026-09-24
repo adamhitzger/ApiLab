@@ -8,7 +8,7 @@ import { CookieSettingsButton } from "./CookieSettingsButton";
 export function FooterBottomRow({ className = "" }: { className?: string }) {
   return (
     <div className={`flex flex-col gap-3 text-[13px] text-white/40 md:flex-row md:items-center md:justify-between ${className}`}>
-      <p>© {new Date().getFullYear()} AUTOMA. Všechna práva vyhrazena.</p>
+      <p>© {new Date().getFullYear()} ApiLab. Všechna práva vyhrazena.</p>
       <div className="flex flex-wrap gap-x-6 gap-y-2">
         <Link href="/ochrana-osobnich-udaju" className="hover:text-white/70">Ochrana osobních údajů</Link>
         <Link href="/obchodni-podminky" className="hover:text-white/70">Obchodní podmínky</Link>

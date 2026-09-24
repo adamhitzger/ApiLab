@@ -9,7 +9,7 @@ const description =
 
 export const metadata: Metadata = {
   title: "Obchodní podmínky",
-  ...pageSeo({ path: "/obchodni-podminky", title: "Obchodní podmínky · AUTOMA", description, type: "article" }),
+  ...pageSeo({ path: "/obchodni-podminky", title: "Obchodní podmínky", description, type: "article" }),
 };
 
 export default function TermsPage() {

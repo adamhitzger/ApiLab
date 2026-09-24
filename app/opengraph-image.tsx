@@ -1,6 +1,7 @@
 import { ogContentType, ogSize, renderOgImage } from "@/lib/og";
+import { ogImage } from "@/lib/seo";
 
-export const alt = "AUTOMA — automatizace firemních a výrobních procesů";
+export const alt = ogImage.alt;
 export const size = ogSize;
 export const contentType = ogContentType;
 

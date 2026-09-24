@@ -1,6 +1,6 @@
 import type { Project } from "@/types";
 import { about, faq, pricing, services, site } from "./content";
-import { siteUrl } from "./seo";
+import { siteTitle, siteUrl } from "./seo";
 
 /**
  * schema.org data pro celý web. Každá stránka vykresluje jeden @graph:
@@ -142,7 +142,7 @@ export function homeSchema() {
   return graph([
     organization,
     website,
-    webPage({ path: "/", name: "AUTOMA — Automatizace firemních a výrobních procesů", description: site.tagline }),
+    webPage({ path: "/", name: siteTitle, description: site.tagline }),
   ]);
 }
 

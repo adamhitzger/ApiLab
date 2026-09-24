@@ -14,7 +14,7 @@ const description =
 
 export const metadata: Metadata = {
   title: "O nás",
-  ...pageSeo({ path: "/o-nas", title: "O nás · AUTOMA", description }),
+  ...pageSeo({ path: "/o-nas", title: "O nás", description }),
 };
 
 export default async function AboutPage() {

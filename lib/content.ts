@@ -1,9 +1,9 @@
 export const site = {
-  name: "AUTOMA",
+  name: "ApiLab",
   // Pozor: tenhle soubor exportuje i konstantu `process` (sekce Jak pracujeme),
   // takže se tu nesmí sahat na process.env — env override řeší app/layout.tsx.
-  url: "https://www.automa.cz",
-  email: "hello@automa.cz",
+  url: "https://www.apilab.cz",
+  email: "hello@apilab.cz",
   owner: "Adam Hitzger",
   ico: "19712049",
   address: "Ledečská 2984, 580 01 Havlíčkův Brod",
@@ -36,7 +36,7 @@ export const hero = {
 };
 
 export const why = {
-  eyebrow: "PROČ AUTOMA",
+  eyebrow: "PROČ APILAB",
   title: "Odborníci, kterým můžete svěřit procesy i data.",
   lead:
     "Jsme softwarová agentura pro automatizaci firemních a výrobních procesů. Stavíme na ověřených technologiích, k datům klientů přistupujeme jako k vlastním a držíme termíny — protože automatizace, na kterou se nedá spolehnout, nikomu čas neušetří.",

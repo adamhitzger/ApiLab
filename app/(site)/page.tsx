@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, siteTitle } from "@/lib/seo";
 import { homeSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/home/Hero";
-import { WhyAutoma } from "@/components/home/WhyAutoma";
+import { WhyApiLab } from "@/components/home/WhyApiLab";
 import { Services } from "@/components/home/Services";
 import { ProjectsSection } from "@/components/home/ProjectsSection";
 import { Integrations } from "@/components/home/Integrations";
@@ -15,8 +15,8 @@ const description =
   "Navrhujeme a stavíme automatizace, datové pipeline a AI nástroje pro výrobní i obchodní firmy — od scrapingu dat přes napojení na CRM až po dashboardy pro CNC výrobu.";
 
 export const metadata: Metadata = {
-  title: { absolute: "AUTOMA — Automatizace firemních a výrobních procesů" },
-  ...pageSeo({ path: "/", title: "AUTOMA — Automatizace firemních a výrobních procesů", description }),
+  title: { absolute: siteTitle },
+  ...pageSeo({ path: "/", title: siteTitle, description, withBrand: false }),
 };
 
 export default async function Home() {
@@ -26,7 +26,7 @@ export default async function Home() {
     <>
       <JsonLd data={homeSchema()} />
       <Hero />
-      <WhyAutoma />
+      <WhyApiLab />
       <Services />
       <ProjectsSection projects={projects} />
       <Integrations tools={tools} categories={categories} />

@@ -24,7 +24,7 @@ export default function NotFound() {
             <Button href="/projekty" variant="ghost-dark" arrow={false}>Naše projekty</Button>
           </div>
           <p data-hero-item className="text-[13.5px] text-white/45">
-            Nebo nám napište na <a href="mailto:hello@automa.cz" className="text-white/70">hello@automa.cz</a> — odpovíme do 24 hodin.
+            Nebo nám napište na <a href="mailto:hello@apilab.cz" className="text-white/70">hello@apilab.cz</a> — odpovíme do 24 hodin.
           </p>
         </Container>
       </main>

@@ -65,7 +65,7 @@ export function ContactForm() {
         </button>
         <p className="text-[13px] text-white/45">
           Nebo nám napište rovnou na{" "}
-          <a href="mailto:hello@automa.cz" className="text-white/70 underline-offset-4 hover:underline">hello@automa.cz</a>
+          <a href="mailto:hello@apilab.cz" className="text-white/70 underline-offset-4 hover:underline">hello@apilab.cz</a>
         </p>
       </div>
     </form>

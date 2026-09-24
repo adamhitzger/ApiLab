@@ -13,7 +13,7 @@ const description =
 
 export const metadata: Metadata = {
   title: "Projekty",
-  ...pageSeo({ path: "/projekty", title: "Projekty · AUTOMA", description }),
+  ...pageSeo({ path: "/projekty", title: "Projekty", description }),
 };
 
 export default async function ProjectsPage() {
