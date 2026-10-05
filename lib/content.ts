@@ -79,7 +79,7 @@ export const pricing = {
   plans: [
     {
       name: "Základ",
-      price: "5 000 Kč",
+      price: "4 000 Kč",
       note: "Pro první automatizaci, která vám ušetří čas hned.",
       features: ["3–4 napojené integrace", "E-mailová podpora do 48 h", "Monitoring provozu 24/7", "Měsíční report výsledků"],
       cta: "Chci tenhle balíček",
@@ -87,15 +87,15 @@ export const pricing = {
     },
     {
       name: "Růst",
-      price: "15 000 Kč",
+      price: "10 000 Kč",
       note: "Pro firmy, které automatizují víc než jeden proces.",
-      features: ["Až 8 integrací", "Vlastní dashboard a reporting", "Prioritní podpora do 24 h", "Měsíční konzultace nad daty"],
+      features: ["Až 10 integrací", "Vlastní dashboard a reporting", "Prioritní podpora do 24 h", "Měsíční konzultace nad daty"],
       cta: "Chci tenhle balíček",
       featured: true,
     },
     {
       name: "Na míru",
-      price: "od 30 000 Kč",
+      price: "od 20 000 Kč",
       note: "Pro provozy, kde automatizace běží ve velkém.",
       features: ["Neomezené integrace", "Dedikovaná podpora do 4 h", "SLA a garance dostupnosti", "Vlastní vývoj a rozšíření"],
       cta: "Domluvit konzultaci",
@@ -136,7 +136,7 @@ export const faq = {
   items: [
     {
       q: "Kolik automatizace stojí a od čeho se cena odvíjí?",
-      a: "Pracujeme výhradně na měsíčním paušálu — nic neplatíte předem a implementace je součástí ceny. Výše paušálu se odvíjí od počtu napojených integrací, složitosti procesu a úrovně podpory: Základ začíná na 5 000 Kč měsíčně, Růst na 15 000 Kč. Po úvodním hovoru dostanete konkrétní nabídku, ne obecný rozptyl.",
+      a: "Pracujeme výhradně na měsíčním paušálu — nic neplatíte předem a implementace je součástí ceny. Výše paušálu se odvíjí od počtu napojených integrací, složitosti procesu a úrovně podpory: Základ začíná na 4 000 Kč měsíčně, Růst na 10 000 Kč. Po úvodním hovoru dostanete konkrétní nabídku, ne obecný rozptyl.",
     },
     {
       q: "Jak dlouho trvá realizace typického projektu?",
