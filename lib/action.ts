@@ -58,14 +58,14 @@ export async function sendContact(
           from: process.env.FROM_EMAIL,
           to: "adam.hitzger@icloud.com",
           subject: "Nový kontakt",
-          /*text: [
+          text: [
             `Jméno: ${data.fullname}`,
             `E-mail: ${data.email}`,
             `Telefon: ${data.phone}`,
             ``,
             `Zpráva:`,
             data.msg,
-            ].join("\n"),*/
+            ].join("\n"),
             html: `
                 <p><strong>Jméno:</strong> ${escapeHtml(data.fullname)}</p>
                 <p><strong>E-mail:</strong> ${escapeHtml(data.email)}</p>
