@@ -7,11 +7,16 @@ import nodemailer from "nodemailer"
 
 function smtp(){
   return nodemailer.createTransport({
-       service: "gmail",
+        host: "smtp.seznam.cz",
+        port: 587,
+        secure: false,
         auth: {
          user: process.env.FROM_EMAIL!,
          pass: process.env.FROM_EMAIL_PASSWORD!,
-        },
+        },              
+        tls: {
+         ciphers: "SSLv3"
+        }
       });
 }
 
@@ -53,19 +58,19 @@ export async function sendContact(
           from: process.env.FROM_EMAIL,
           to: "adam.hitzger@icloud.com",
           subject: "Nový kontakt",
-          text: [
+          /*text: [
             `Jméno: ${data.fullname}`,
             `E-mail: ${data.email}`,
             `Telefon: ${data.phone}`,
             ``,
             `Zpráva:`,
             data.msg,
-            ].join("\n"),
+            ].join("\n"),*/
             html: `
                 <p><strong>Jméno:</strong> ${escapeHtml(data.fullname)}</p>
                 <p><strong>E-mail:</strong> ${escapeHtml(data.email)}</p>
                 <p><strong>Telefon:</strong> ${escapeHtml(data.phone)}</p>
-                ${data.msg && "<p><strong>Zpráva:</strong><br>${escapeHtml(data.msg).replace(/\n/g, '<br/>')}</p>"}
+                ${data.msg && `<p><strong>Zpráva:</strong><br>${escapeHtml(data.msg).replace(/\n/g, '<br/>')}</p>`}
             `,
         })
 
