@@ -4,6 +4,7 @@ import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
 import { site } from "@/lib/content";
 import { ogImage, siteTitle, siteUrl } from "@/lib/seo";
 import "./globals.css";
+import Hotjar from "@/components/layout/Hotjar";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -100,6 +101,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             strategy="beforeInteractive"
           />
         )}
+        <Hotjar/>
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
