@@ -5,7 +5,7 @@ import { site } from "@/lib/content";
 import { ogImage, siteTitle, siteUrl } from "@/lib/seo";
 import "./globals.css";
 import Hotjar from "@/components/layout/Hotjar";
-
+import {GoogleTagManager} from "@next/third-parties/google"
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin", "latin-ext"],
@@ -102,6 +102,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           />
         )}
         <Hotjar/>
+         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_KEY as string}/>
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
