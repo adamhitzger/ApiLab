@@ -17,7 +17,7 @@ export function ProjectCard({ project, index, chipTone = "light" }: { project: P
           {project.pills.map((p) => <Chip key={p} tone={chipTone}>{p}</Chip>)}
         </div>
       )}
-      <Link href={`/projekty#${project.slug}`} className="mt-auto inline-flex items-center gap-1.5 pt-1 text-[14px] font-medium text-ink">
+      <Link href={`/projekty/${project.slug}`} className="mt-auto inline-flex items-center gap-1.5 pt-1 text-[14px] font-medium text-ink">
         Detail projektu <span aria-hidden className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">→</span>
       </Link>
     </article>

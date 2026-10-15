@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
 import { gsap, ScrollTrigger, useGSAP } from "@/components/motion/gsap";
 import type { Project } from "@/types";
-import { Chip, Container, cx, NumberBadge } from "@/components/ui";
-import { ProjectBody } from "./ProjectBody";
+import { Button, Chip, Container, cx, NumberBadge } from "@/components/ui";
+import { firstSection, ProjectBody } from "./ProjectBody";
 
 export function ProjectsList({ projects }: { projects: Project[] }) {
   const categories = useMemo(() => {
@@ -79,7 +80,9 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
                 <NumberBadge n={order[i] + 1} tone={order[i] % 2 ? "yellow" : "lime"} size={38} radius={11} />
                 {p.category && <span className="text-[12.5px] font-semibold uppercase tracking-[0.12em] text-muted">{p.category.name}</span>}
               </div>
-              <h2 className="font-display text-[28px] font-extrabold leading-[1.08] text-ink md:text-[36px]">{p.heading}</h2>
+              <h2 className="font-display text-[28px] font-extrabold leading-[1.08] text-ink md:text-[36px]">
+                <Link href={`/projekty/${p.slug}`} className="transition-colors hover:text-ink/70">{p.heading}</Link>
+              </h2>
               {p.heading2 && <p className="text-[14.5px] font-semibold text-muted">{p.heading2}</p>}
               <p className="text-[16px] leading-[1.6] text-muted md:text-[16.5px]">{p.overview}</p>
               {p.pills?.length > 0 && (
@@ -87,9 +90,18 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
                   {p.pills.map((c) => <Chip key={c} tone="outline">{c}</Chip>)}
                 </div>
               )}
+              <Button href={`/projekty/${p.slug}`} variant="outline" className="mt-2 self-start">Celý projekt</Button>
             </div>
             <div data-reveal="right" data-tilt="4">
-              <ProjectBody value={p.text} />
+              <ProjectBody
+                value={firstSection(p.text ?? [])}
+                footer={
+                  <Link href={`/projekty/${p.slug}`} className="group/more mt-7 flex items-center gap-1.5 border-t border-white/10 pt-6 text-[14px] font-semibold text-lime">
+                    Jak jsme to vyřešili a co to přineslo
+                    <span aria-hidden className="inline-block transition-transform duration-300 group-hover/more:translate-x-1.5">→</span>
+                  </Link>
+                }
+              />
             </div>
           </Container>
         </section>

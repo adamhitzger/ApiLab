@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { PortableText, type PortableTextBlock, type PortableTextBlockComponent, type PortableTextComponents } from "next-sanity";
 
 /**
@@ -38,11 +39,18 @@ function makeComponents(value: PortableTextBlock[]): PortableTextComponents {
   };
 }
 
-export function ProjectBody({ value }: { value: PortableTextBlock[] }) {
+/** Bloky první sekce (do druhého nadpisu) — na výpisu stačí Problém, zbytek je v článku. */
+export function firstSection(value: PortableTextBlock[]) {
+  const headings = value.flatMap((b, i) => (HEADING_STYLES.has(String(b.style)) ? [i] : []));
+  return headings.length > 1 ? value.slice(0, headings[1]) : value;
+}
+
+export function ProjectBody({ value, footer }: { value: PortableTextBlock[]; footer?: ReactNode }) {
   if (!value?.length) return null;
   return (
     <div className="relative overflow-hidden rounded-card bg-ink-2 p-7 ring-1 ring-white/10 texture-dots md:p-10">
       <PortableText value={value} components={makeComponents(value)} />
+      {footer}
     </div>
   );
 }

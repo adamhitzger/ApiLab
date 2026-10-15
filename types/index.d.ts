@@ -46,6 +46,16 @@ export interface Project {
     text: Array<PortableTextBlock>;
 }
 
+export interface ProjectDetail extends Project {
+    _createdAt: string;
+    _updatedAt: string;
+}
+
+export interface ProjectSlug {
+    slug: string;
+    _updatedAt: string;
+}
+
 export type Reviews = Array<Review>;
 export type Projects = Array<Project>;
 export type Categories = Array<Category>;

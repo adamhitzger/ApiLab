@@ -75,11 +75,12 @@ export const pricing = {
   eyebrow: "CENÍK",
   title: "Ceník bez hvězdiček",
   lead:
-    "Všechno je měsíční paušál — žádná vstupní investice ani jednorázová implementační faktura. V ceně je návrh, vývoj, provoz, monitoring i podpora. Rozsah balíčku ladíme podle vašeho zadání.",
+    "Automatizace platíte měsíčním paušálem — žádná vstupní investice ani jednorázová implementační faktura. V ceně je návrh, vývoj, provoz, monitoring i podpora. Rozsah balíčku ladíme podle vašeho zadání.",
+  period: "/ měsíc",
   plans: [
     {
       name: "Základ",
-      price: "4 000 Kč",
+      price: "3 000 Kč",
       note: "Pro první automatizaci, která vám ušetří čas hned.",
       features: ["3–4 napojené integrace", "E-mailová podpora do 48 h", "Monitoring provozu 24/7", "Měsíční report výsledků"],
       cta: "Chci tenhle balíček",
@@ -87,7 +88,7 @@ export const pricing = {
     },
     {
       name: "Růst",
-      price: "10 000 Kč",
+      price: "8 000 Kč",
       note: "Pro firmy, které automatizují víc než jeden proces.",
       features: ["Až 10 integrací", "Vlastní dashboard a reporting", "Prioritní podpora do 24 h", "Měsíční konzultace nad daty"],
       cta: "Chci tenhle balíček",
@@ -95,13 +96,62 @@ export const pricing = {
     },
     {
       name: "Na míru",
-      price: "od 20 000 Kč",
+      price: "od 15 000 Kč",
       note: "Pro provozy, kde automatizace běží ve velkém.",
       features: ["Neomezené integrace", "Dedikovaná podpora do 4 h", "SLA a garance dostupnosti", "Vlastní vývoj a rozšíření"],
       cta: "Domluvit konzultaci",
       featured: false,
     },
   ],
+  web: {
+    title: "Weby a e-shopy",
+    lead: "Web platíte jednou, za hotové dílo. V každém balíčku je SEO, design podle vaší značky a zákaznická podpora po spuštění.",
+    period: "jednorázově",
+    plans: [
+      {
+        name: "Jednostránkový web",
+        price: "10 000 Kč",
+        note: "SPA pro prezentaci firmy, služby nebo produktu na jedné stránce.",
+        features: [
+          "Design podle klienta a jeho značky",
+          "SEO: metadata, sitemap, schema.org",
+          "Rychlé načítání a mobilní verze",
+          "Kontaktní formulář do e-mailu",
+          "Zákaznická podpora po spuštění",
+        ],
+        cta: "Chci jednostránkový web",
+        featured: false,
+      },
+      {
+        name: "Dynamický web na míru",
+        price: "od 15 000 Kč",
+        note: "Víc stránek, obsah si spravujete sami a web roste s firmou.",
+        features: [
+          "Design na míru podle klienta",
+          "Technické SEO a optimalizace rychlosti",
+          "Redakční systém pro správu obsahu",
+          "Napojení formulářů na CRM a mailing",
+          "Zákaznická podpora a úpravy po spuštění",
+        ],
+        cta: "Chci web na míru",
+        featured: true,
+      },
+      {
+        name: "E-shop",
+        price: "od 35 000 Kč",
+        note: "Vlastní e-shop nebo nadstavba nad platformou, na které už prodáváte.",
+        features: [
+          "Design podle klienta a jeho značky",
+          "SEO produktů a kategorií, feedy pro srovnávače",
+          "Napojení přes API na Shopify, Shoptet, WooCommerce",
+          "Platební brány, dopravci a fakturace",
+          "Zákaznická podpora a správa po spuštění",
+        ],
+        cta: "Chci e-shop",
+        featured: false,
+      },
+    ],
+  },
 };
 
 export const about = {
@@ -136,7 +186,7 @@ export const faq = {
   items: [
     {
       q: "Kolik automatizace stojí a od čeho se cena odvíjí?",
-      a: "Pracujeme výhradně na měsíčním paušálu — nic neplatíte předem a implementace je součástí ceny. Výše paušálu se odvíjí od počtu napojených integrací, složitosti procesu a úrovně podpory: Základ začíná na 4 000 Kč měsíčně, Růst na 10 000 Kč. Po úvodním hovoru dostanete konkrétní nabídku, ne obecný rozptyl.",
+      a: "Automatizace stavíme na měsíčním paušálu — nic neplatíte předem a implementace je součástí ceny. Výše paušálu se odvíjí od počtu napojených integrací, složitosti procesu a úrovně podpory: Základ začíná na 3 000 Kč měsíčně, Růst na 8 000 Kč. Weby a e-shopy naopak účtujeme jednorázově: jednostránkový web za 10 000 Kč, web na míru od 15 000 Kč, e-shop od 35 000 Kč. Po úvodním hovoru dostanete konkrétní nabídku, ne obecný rozptyl.",
     },
     {
       q: "Jak dlouho trvá realizace typického projektu?",

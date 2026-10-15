@@ -57,3 +57,25 @@ export const CATEGORIES_QUERY = defineQuery(`
 export const PROJECTS_UPDATED_QUERY = defineQuery(`
   *[_type == "projects" && defined(slug.current)] | order(_updatedAt desc)[0]._updatedAt
 `);
+
+export const PROJECT_QUERY = defineQuery(`
+  *[_type == "projects" && slug.current == $slug][0] {
+    _id,
+    _createdAt,
+    _updatedAt,
+    heading,
+    "slug": slug.current,
+    heading2,
+    overview,
+    pills,
+    text,
+    category->{ ${CATEGORY_FIELDS} }
+  }
+`);
+
+export const PROJECT_SLUGS_QUERY = defineQuery(`
+  *[_type == "projects" && defined(slug.current)] | order(_createdAt asc) {
+    "slug": slug.current,
+    _updatedAt
+  }
+`);

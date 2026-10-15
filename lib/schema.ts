@@ -1,4 +1,4 @@
-import type { Project } from "@/types";
+import type { Project, ProjectDetail } from "@/types";
 import { about, faq, pricing, services, site } from "./content";
 import { siteTitle, siteUrl } from "./seo";
 
@@ -58,7 +58,7 @@ const organization = {
     "datové dashboardy",
     "AI nástroje pro firmy",
   ],
-  priceRange: `${price(pricing.plans[0].price)}–${price(pricing.plans[2].price)} CZK`,
+  priceRange: `${price(pricing.plans[0].price)}–${price(pricing.web.plans[2].price)} CZK`,
   ...(profiles.length > 0 && { sameAs: profiles }),
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -68,7 +68,8 @@ const organization = {
       itemOffered: { "@type": "Service", name: s.title, description: s.text, provider: { "@id": ORG_ID }, serviceType: s.chips.join(", ") },
     })),
   },
-  makesOffer: pricing.plans.map((plan) => ({
+  makesOffer: [
+  ...pricing.plans.map((plan) => ({
     "@type": "Offer",
     name: plan.name,
     description: plan.note,
@@ -83,6 +84,21 @@ const organization = {
     },
     itemOffered: { "@type": "Service", name: `Automatizace — balíček ${plan.name}`, provider: { "@id": ORG_ID } },
   })),
+  ...pricing.web.plans.map((plan) => ({
+    "@type": "Offer",
+    name: plan.name,
+    description: plan.note,
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      price: price(plan.price),
+      priceCurrency: "CZK",
+      valueAddedTaxIncluded: false,
+      // "od 15 000 Kč" je spodní hranice, ne pevná cena
+      ...(plan.price.startsWith("od") && { minPrice: price(plan.price) }),
+    },
+    itemOffered: { "@type": "Service", name: plan.name, serviceType: "Tvorba webových stránek", provider: { "@id": ORG_ID } },
+  })),
+  ],
 };
 
 const website = {
@@ -191,8 +207,8 @@ export function projectsSchema(projects: Project[], description: string) {
         position: i + 1,
         item: {
           "@type": "CreativeWork",
-          "@id": `${url("/projekty")}#${p.slug}`,
-          url: `${url("/projekty")}#${p.slug}`,
+          "@id": `${url(`/projekty/${p.slug}`)}#article`,
+          url: url(`/projekty/${p.slug}`),
           name: p.heading,
           headline: p.heading2 || p.heading,
           description: p.overview,
@@ -202,6 +218,37 @@ export function projectsSchema(projects: Project[], description: string) {
           ...(p.category && { about: { "@type": "Thing", name: p.category.name } }),
         },
       })),
+    },
+  ]);
+}
+
+export function projectSchema(p: ProjectDetail) {
+  const path = `/projekty/${p.slug}`;
+  const trail = [
+    { name: "Úvod", path: "/" },
+    { name: "Projekty", path: "/projekty" },
+    { name: p.heading, path },
+  ];
+  return graph([
+    organization,
+    website,
+    webPage({ path, name: p.heading, description: p.overview, trail }),
+    breadcrumbs(trail),
+    {
+      "@type": "Article",
+      "@id": `${url(path)}#article`,
+      mainEntityOfPage: { "@id": `${url(path)}#webpage` },
+      headline: p.heading,
+      ...(p.heading2 && { alternativeHeadline: p.heading2 }),
+      description: p.overview,
+      image: `${siteUrl}/opengraph-image`,
+      datePublished: p._createdAt,
+      dateModified: p._updatedAt,
+      inLanguage: "cs-CZ",
+      author: { "@id": ORG_ID },
+      publisher: { "@id": ORG_ID },
+      ...(p.category && { articleSection: p.category.name }),
+      ...(p.pills?.length > 0 && { keywords: p.pills.join(", ") }),
     },
   ]);
 }
