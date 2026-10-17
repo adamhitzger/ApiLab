@@ -51,7 +51,7 @@ export const why = {
     },
     {
       title: "Rychlí a spolehliví",
-      text: "Návrh do týdne, první automatizace v řádu dnů. Monitoring 24/7 hlídá, že to, co jednou spustíme, běží dál — a když ne, víme to dřív než vy.",
+      text: "Návrh do týdne, automatizace v provozu do čtyř týdnů. Monitoring 24/7 hlídá, že to, co jednou spustíme, běží dál — a když ne, víme to dřív než vy.",
     },
   ],
 };
@@ -171,12 +171,12 @@ export const about = {
 
 export const process = {
   eyebrow: "PROCES",
-  title: "Od nápadu k automatizaci ve 4 krocích",
+  title: "Od nápadu k automatizaci v provozu za 4 týdny",
   steps: [
-    { title: "Konzultace zdarma", text: "Probereme vaše procesy a najdeme, kde automatizace nejvíc ušetří čas i peníze." },
-    { title: "Návrh řešení", text: "Do týdne dostanete konkrétní plán, rozsah práce a cenový odhad." },
-    { title: "Vývoj & testování", text: "Stavíme iterativně — průběžně vidíte progres a můžete korigovat směr." },
-    { title: "Nasazení & podpora", text: "Go-live, monitoring provozu a podpora po spuštění, ať vše běží dál." },
+    { when: "1. týden", title: "Konzultace a návrh", text: "Probereme vaše procesy, najdeme, kde automatizace nejvíc ušetří, a do týdne dostanete konkrétní návrh, rozsah a cenu." },
+    { when: "2.–3. týden", title: "Produkční verze", text: "Návrh zpracujeme do hotové produkční verze. Průběžně vidíte progres a můžete korigovat směr." },
+    { when: "3.–4. týden", title: "Nasazení a ladění", text: "Spustíme automatizaci do provozu a ladíme ji, dokud neběží na sto procent." },
+    { when: "Pak průběžně", title: "Monitoring a péče", text: "Hlídáme provoz 24/7, aktualizace API i nové verze jazyků a knihoven. Vy se nemusíte starat o nic." },
   ],
 };
 
@@ -190,7 +190,7 @@ export const faq = {
     },
     {
       q: "Jak dlouho trvá realizace typického projektu?",
-      a: "Návrh a rozsah máte do týdne od úvodního hovoru. Jednoduchá automatizace (napojení jednoho nástroje na CRM) běží v řádu dnů, komplexnější řešení s dashboardem obvykle do 4–6 týdnů. Stavíme iterativně, takže první části vidíte fungovat dřív, než je hotový celek.",
+      a: "Návrh a rozsah máte do týdne od úvodního hovoru. Ve 2.–3. týdnu návrh zpracujeme do produkční verze, ve 3.–4. týdnu automatizaci nasadíme do provozu a ladíme. Pak ji průběžně monitorujeme a držíme aktuální. Stavíme iterativně, takže první části vidíte fungovat dřív, než je hotový celek.",
     },
     {
       q: "Máme částečně automatizováno — dá se na to navázat?",
